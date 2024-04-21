@@ -1,8 +1,8 @@
 export default function EachSocial(props: any) {
     return (
-        <div className="p-2">
+        <div className="p-2 w-full">
             <div className="flex items-center border border-zinc-800 px-4 py-3 rounded-2xl bg-zinc-900 hover:border-zinc-700 hover:bg-zinc-800 hover:text-orange-500">
-                <div className="w-ft">
+                <div className="w-fit">
                     {props.icon}
                 </div>
 
