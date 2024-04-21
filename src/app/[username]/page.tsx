@@ -19,7 +19,9 @@ let profile = {
 export default function username() {
     return (
         <main className={ubuntu.className}>
-            <div className="w-1/3 p-5 h-screen m-auto">
+            <div className="w-full p-5 h-screen m-auto
+                lg:w-1/3
+            ">
                 <div >
                     <div className="m-auto w-fit text-center ">
                         <Smile className="m-auto" size={50} />
@@ -27,37 +29,41 @@ export default function username() {
                     </div>
                 </div>
 
-                <div className="h-16"></div>
 
                 {/* SOCIALS */}
-                <div >
+                <div className="pt-8
+                    lg:pt-14
+                ">
                     <div className="relative border border-zinc-800 rounded-2xl">
-                        <div className="m-auto w-fit absolute -mt-7 mx-72 p-2 bg-[#121212]">
-                            <Link2 />
+                        <div className="w-full -mt-7 p-2">
+                            <Link2 className="mx-auto bg-[#121212] p-2" size={40}/>
                         </div>
-                        <div className="pt-4 pb-3 px-2 grid grid-flow-row grid-cols-3 ">
+                        
+                        <div className="pb-3 px-2 grid grid-flow-row grid-cols-2
+                            lg:grid-cols-3 
+                        ">
                             <EachSocial 
-                                icon={<Linkedin className=""/>} 
+                                icon={<Linkedin size={25}/>} 
                                 socialName="LinkedIn" 
                             />                        
                             <EachSocial 
-                                icon={<Instagram className=""/>} 
+                                icon={<Instagram size={25}/>} 
                                 socialName="Instagram" 
                             />
                             <EachSocial 
-                                icon={<Twitter className=""/>} 
+                                icon={<Twitter size={25}/>} 
                                 socialName="Twitter" 
                             />                        
                             <EachSocial 
-                                icon={<Twitch className=""/>} 
+                                icon={<Twitch size={25}/>} 
                                 socialName="Twitch" 
                             />
                             <EachSocial 
-                                icon={<Github className=""/>} 
+                                icon={<Github size={25}/>} 
                                 socialName="GitHub" 
                             />                        
                             <EachSocial 
-                                icon={<Youtube className=""/>} 
+                                icon={<Youtube size={25}/>} 
                                 socialName="YouTube" 
                             />
                             
@@ -66,34 +72,41 @@ export default function username() {
                 </div>
 
                 {/* SOCIALS */}
-                <div className="pt-14">
-                    <div className="relative border border-zinc-800 rounded-2xl">
-                        <div className="m-auto w-fit absolute -mt-7 mx-72 p-2 bg-[#121212]">
-                            <Link2 />
+                <div className="pt-8
+                    lg:pt-14
+                ">
+                    <div className="border border-zinc-800 rounded-2xl">
+                        <div className="w-full -mt-7 p-2">
+                            <Link2 className="mx-auto bg-[#121212] p-2" size={40}/>
                         </div>
-                        <div className="pt-4 pb-3 px-2 grid grid-flow-row grid-cols-3 ">
+                        
+                        <div className="pb-3 px-2 grid grid-flow-row grid-cols-2
+                            md:grid-cols-2
+                            lg:grid-cols-2
+                            xl:grid-cols-3
+                        ">
                             <EachSocial 
-                                icon={<Linkedin className=""/>} 
+                                icon={<Linkedin size={25}/>} 
                                 socialName="LinkedIn" 
                             />                        
                             <EachSocial 
-                                icon={<Instagram className=""/>} 
+                                icon={<Instagram size={25}/>} 
                                 socialName="Instagram" 
                             />
                             <EachSocial 
-                                icon={<Twitter className=""/>} 
+                                icon={<Twitter size={25}/>} 
                                 socialName="Twitter" 
                             />                        
                             <EachSocial 
-                                icon={<Twitch className=""/>} 
+                                icon={<Twitch size={25}/>} 
                                 socialName="Twitch" 
                             />
                             <EachSocial 
-                                icon={<Github className=""/>} 
+                                icon={<Github size={25}/>} 
                                 socialName="GitHub" 
                             />                        
                             <EachSocial 
-                                icon={<Youtube className=""/>} 
+                                icon={<Youtube size={25}/>} 
                                 socialName="YouTube" 
                             />
                             
