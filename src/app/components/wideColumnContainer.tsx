@@ -1,4 +1,4 @@
-export default function LinkGroup(props: any) {
+export default function WideColumnContainer(props: any) {
     return (
         <div className="pt-8
             lg:pt-14
@@ -13,7 +13,7 @@ export default function LinkGroup(props: any) {
                 <div className={
                     props.colStyle === true ? 
                         "pb-3 px-2 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3" 
-                    : "grid "
+                    : "pb-3 px-2 grid grid-flow-row grid-cols-2"
                 }>
                     {props.links}
                 </div>

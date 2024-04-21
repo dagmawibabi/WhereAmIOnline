@@ -1,9 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Ubuntu } from "next/font/google";
-import { Github, Instagram, Link2, Linkedin, LucidePodcast, Podcast, Smile, Twitch, Twitter, Youtube } from "lucide-react";
+import { Code2, Dribbble, EarthIcon, Github, Instagram, Laptop2, Link2, Linkedin, LucidePodcast, Mails, Mic, NotebookPen, Podcast, QrCode, Smile, Twitch, Twitter, Youtube } from "lucide-react";
 import EachSocial from "../components/eachSocial";
 import LinkGroup from "../components/linkGroup";
-import PodcastContainer from "../components/podcastContainer";
+import PodcastContainer from "../components/otherContainer";
+import OtherContainer from "../components/otherContainer";
+import RowContainer from "../components/rowContainer";
+import WideColumnContainer from "../components/wideColumnContainer";
+import TwoColumnContainer from "../components/twoColumnContainer";
 
 const ubuntu = Ubuntu({
     subsets: ["cyrillic"],
@@ -21,29 +25,27 @@ let profile = {
 export default function username() {
     return (
         <main className={ubuntu.className}>
-            <div className="w-full p-5 h-screen m-auto
+            <div className="w-full p-5 m-auto
                 lg:w-1/3
             ">
+                {/* INTRO */}
                 <div >
                     <div className="m-auto w-fit text-center ">
-                        <Smile className="m-auto" size={50} />
+                        <Smile className="m-auto" size={60} />
                         <p className="pt-5 text-2xl font-bold"> {profile["fullname"]} </p>
+                        <div className="flex justify-center align-middle items-end text-zinc-400">
+                            <p className="pt-2 pr-2  font-bold"> <span className="text-xs">AKA</span> {profile["username"]} </p>
+                            <QrCode className="" />
+                        </div>
                     </div>
                 </div>
 
-
                 {/* SOCIALS */}
-                <div className="pt-8
-                    lg:pt-14
-                ">
-                    <div className="relative border border-zinc-800 rounded-2xl">
-                        <div className="w-full -mt-7 p-2">
-                            <Link2 className="mx-auto bg-[#121212] p-2" size={40}/>
-                        </div>
-                        
-                        <div className="pb-3 px-2 grid grid-flow-row grid-cols-2
-                            lg:grid-cols-3 
-                        ">
+                <LinkGroup 
+                    colStyle = { true }
+                    icon = {<Link2 size={30}/>} 
+                    links = {
+                        <>
                             <EachSocial 
                                 icon={<Linkedin size={25}/>} 
                                 socialName="LinkedIn" 
@@ -61,34 +63,71 @@ export default function username() {
                                 socialName="Twitch" 
                             />
                             <EachSocial 
-                                icon={<Github size={25}/>} 
-                                socialName="GitHub" 
+                                icon={<Dribbble size={25}/>} 
+                                socialName="Dribble" 
                             />                        
                             <EachSocial 
                                 icon={<Youtube size={25}/>} 
                                 socialName="YouTube" 
                             />
-                            
-                        </div>
-                    </div>
-                </div>
+                        </>
+                    }
+                />
 
-                {/* SOCIALS */}
-                <LinkGroup 
+                {/* WEBSITE */}
+                <TwoColumnContainer 
                     colStyle = { false }
-                    icon = {<Podcast className="mx-auto bg-[#121212] p-2" size={40}/>} 
+                    icon = {<EarthIcon size={30}/>} 
                     links = {
                         <>
-                            <PodcastContainer 
+                            <RowContainer 
+                                icon={<NotebookPen size={25}/>} 
+                                socialName="Blog" 
+                            />
+                            <RowContainer 
+                                icon={<Mic size={25}/>} 
+                                socialName="Podcast" 
+                            />
+                            <RowContainer 
+                                icon={<Mails size={25}/>} 
+                                socialName="Newsletter" 
+                            />
+                            <RowContainer 
+                                icon={<Laptop2 size={25}/>} 
+                                socialName="Website" 
+                            />
+                        </>
+                    }
+                />
+
+                {/* CODE */}
+                <WideColumnContainer 
+                    colStyle = { false }
+                    icon = {<Code2 size={30}/>} 
+                    links = {
+                        <>
+                            <OtherContainer 
+                                icon={<Github size={25}/>} 
+                                socialName="GitHub" 
+                            />
+                            <OtherContainer 
+                                icon={<Dribbble size={25}/>} 
+                                socialName="Dribble" 
+                            />
+                        </>
+                    }
+                />
+
+                {/* PODCAST */}
+                <LinkGroup 
+                    colStyle = { false }
+                    icon = {<Mic size={30}/>} 
+                    links = {
+                        <>
+                            <OtherContainer 
                                 icon={<LucidePodcast size={25}/>} 
                                 socialName="Spotify" 
                             />
-                            <PodcastContainer 
-                                icon={<Linkedin size={25}/>} 
-                                socialName="LinkedIn" 
-                            />    
-                               
-
                         </>
                     }
                 />
